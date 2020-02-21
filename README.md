@@ -1,8 +1,8 @@
 # pytorch FCN road segmentation
 
-## 1.如何运行
+这是一个demo工程，试图从无人机上分割出道路位置
 
-### 1.1 我的运行环境
+## 运行环境
 
 * ubuntu16.4
 * CUDA 9.0
@@ -11,9 +11,27 @@
 * torchvision == 0.2.1
 * OpenCV-Python == 3.4.1
 
-### 1.2 具体操作
+## 训练
 
-* 打开终端，输入
 ```sh
 python train.py
 ```
+
+训练从原图根据labeme标注的文件生成黑白的二值标签文件，原图和标签图片太大，没有push, 转换脚本参考：
+
+```
+https://github.com/qingzhouzhen/data_process/blob/master/generate_road_mask.py
+```
+
+## 测试
+
+```
+python demo.py
+```
+
+如果没有出错，应该出现如下结果
+
+![](./assets/DJI_0510_10.jpg)
+
+参考：<https://github.com/bat67/pytorch-FCN-easiest-demo>
+
